@@ -17,6 +17,7 @@ CaseAPI is a specialized API designed exclusively for integrating with the CaseO
     <groupId>com.github.tommyyy-dev</groupId>
     <artifactId>CaseAPI</artifactId>
     <version>1.0.0</version>
+    <scope>provided</scope>
 </dependency>
 ```
 
