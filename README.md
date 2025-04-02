@@ -16,7 +16,7 @@ CaseAPI is a specialized API designed exclusively for integrating with the CaseO
 <dependency>
     <groupId>com.github.tommyyy-dev</groupId>
     <artifactId>CaseAPI</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -28,7 +28,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("com.github.tommyyy-dev:CaseAPI:1.0.0")
+    compileOnly("com.github.tommyyy-dev:CaseAPI:1.1.0")
 }
 ```
 
@@ -80,22 +80,15 @@ public void onCaseOpen(CaseOpenEvent event) {
 @EventHandler
 public void onCaseReward(CaseOpenCompleteEvent event) {
     Player player = event.getPlayer();
-    player.sendMessage("You have won: " + event.getRewardId());
+    if (event.getCaseReward() instanceof MoneyCaseReward moneyCaseReward) {
+        player.sendMessage("You have won: " + moneyCaseReward.getAmount());
+    }
 }
 ```
 
 If you want to work with the reward or perform actions after the case has been opened and all calculations are complete, you should use the `CaseOpenCompleteEvent`. This event is triggered after all reward calculations have been finalized, ensuring that you are working with the correct result.
 
 On the other hand, the `CaseOpenEvent` is only triggered at the beginning of the case opening process and should not be used for reward-related actions. Additionally, please note that the `CaseOpenCompleteEvent` is **not cancellable**, whereas the `CaseOpenEvent` is **cancellable**.
-
-
-### **5. Retrieving Case Statistics**
-You can get statistics on case openings globally or per player:
-
-```java
-int totalOpened = caseAPI.getTotalCasesOpened();
-int playerOpened = caseAPI.getTotalCasesOpenedByPlayer(player);
-```
 
 ## 📜 API Overview
 

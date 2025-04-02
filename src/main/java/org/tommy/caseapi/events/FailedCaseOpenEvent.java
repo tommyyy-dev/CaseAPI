@@ -6,12 +6,11 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * This event is triggered when a case opening attempt fails.
+ * Represents an event triggered when a case opening attempt fails.
  * It provides information about the player, the case ID, and the reason for failure.
+ * This event cannot be cancelled.
  *
  * @author Tommyyy
- * @version V1.0.0 (Class version)
- * @since   V1.0.1 (Project version)
  */
 public class FailedCaseOpenEvent extends Event {
 
@@ -21,10 +20,10 @@ public class FailedCaseOpenEvent extends Event {
     private final String failureReason;
 
     /**
-     * Creates a new FailedCaseOpenEvent.
+     * Constructs a new {@code FailedCaseOpenEvent} with the specified parameters.
      *
      * @param player The player who attempted to open the case.
-     * @param caseId The ID of the case that was attempted to be opened.
+     * @param caseId The unique identifier of the case that was attempted to be opened.
      * @param failureReason The reason why the case opening failed.
      */
     public FailedCaseOpenEvent(Player player, String caseId, String failureReason) {
@@ -36,14 +35,14 @@ public class FailedCaseOpenEvent extends Event {
     /**
      * Gets the player who attempted to open the case.
      *
-     * @return The player who attempted to open the case.
+     * @return The player instance.
      */
     public Player getPlayer() {
         return this.player;
     }
 
     /**
-     * Gets the ID of the case that was attempted to be opened.
+     * Gets the unique identifier of the case that was attempted to be opened.
      *
      * @return The case ID.
      */
@@ -68,7 +67,7 @@ public class FailedCaseOpenEvent extends Event {
     /**
      * Gets the static handler list for this event.
      *
-     * @return The handler list.
+     * @return The static {@link HandlerList}.
      */
     public static HandlerList getHandlerList() {
         return HANDLERS;

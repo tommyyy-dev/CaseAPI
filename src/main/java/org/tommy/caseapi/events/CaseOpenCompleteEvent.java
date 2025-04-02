@@ -4,46 +4,45 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
+import org.tommy.caseapi.models.CaseReward;
 
 /**
  * Represents an event triggered when a case has been successfully opened,
  * and the reward has been determined. This event cannot be cancelled.
  *
  * @author Tommyyy
- * @version V1.0.0 (Class version)
- * @since   V1.0.0 (Project version)
  */
 public class CaseOpenCompleteEvent extends Event {
 
     private static final HandlerList HANDLERS = new HandlerList();
     private final Player player;
     private final String caseId;
-    private final int rewardId;
+    private final CaseReward caseReward;
 
     /**
-     * Creates a new CaseOpenCompleteEvent.
+     * Constructs a new {@code CaseOpenCompleteEvent} with the specified parameters.
      *
-     * @param player   The player who opened the case.
-     * @param caseId   The ID of the case that was opened.
-     * @param rewardId The ID of the reward obtained from the case.
+     * @param player The player who opened the case.
+     * @param caseId The unique identifier of the case that was opened.
+     * @param caseReward The reward obtained from the case.
      */
-    public CaseOpenCompleteEvent(Player player, String caseId, int rewardId) {
+    public CaseOpenCompleteEvent(Player player, String caseId, CaseReward caseReward) {
         this.player = player;
         this.caseId = caseId;
-        this.rewardId = rewardId;
+        this.caseReward = caseReward;
     }
 
     /**
      * Gets the player who opened the case.
      *
-     * @return The player who opened the case.
+     * @return The player instance.
      */
     public Player getPlayer() {
         return this.player;
     }
 
     /**
-     * Gets the ID of the case that was opened.
+     * Gets the unique identifier of the case that was opened.
      *
      * @return The case ID.
      */
@@ -52,12 +51,12 @@ public class CaseOpenCompleteEvent extends Event {
     }
 
     /**
-     * Gets the reward ID that was obtained from the case.
+     * Gets the reward obtained from the case.
      *
-     * @return The reward ID.
+     * @return The {@link CaseReward} instance.
      */
-    public int getRewardId() {
-        return this.rewardId;
+    public CaseReward getCaseReward() {
+        return this.caseReward;
     }
 
     @Override
@@ -68,7 +67,7 @@ public class CaseOpenCompleteEvent extends Event {
     /**
      * Gets the static handler list for this event.
      *
-     * @return The static handler list.
+     * @return The static {@link HandlerList}.
      */
     public static HandlerList getHandlerList() {
         return HANDLERS;

@@ -11,8 +11,6 @@ import org.jetbrains.annotations.NotNull;
  * This event can be cancelled to prevent the case from being opened.
  *
  * @author Tommyyy
- * @version V1.0.0 (Class version)
- * @since   V1.0.0 (Project version)
  */
 public class CaseOpenEvent extends Event implements Cancellable {
 

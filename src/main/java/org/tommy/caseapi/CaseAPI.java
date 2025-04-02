@@ -10,8 +10,6 @@ import java.util.List;
  * It allows opening cases, managing player inventories, and retrieving statistics.
  *
  * @author Tommyyy
- * @version V1.0.0 (Class version)
- * @since   V1.0.0 (Project version)
  */
 public interface CaseAPI {
 
