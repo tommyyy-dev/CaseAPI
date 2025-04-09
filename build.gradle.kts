@@ -10,7 +10,7 @@ java {
 }
 
 group = "org.tommy.caseapi"
-version = "1.1.0"
+version = "1.2.0"
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")

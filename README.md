@@ -16,7 +16,7 @@ CaseAPI is a specialized API designed exclusively for integrating with the CaseO
 <dependency>
     <groupId>com.github.tommyyy-dev</groupId>
     <artifactId>CaseAPI</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -28,7 +28,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("com.github.tommyyy-dev:CaseAPI:1.1.0")
+    compileOnly("com.github.tommyyy-dev:CaseAPI:1.2.0")
 }
 ```
 
@@ -49,7 +49,16 @@ public void onEnable() {
 }
 ```
 
-### **2. Opening a Case**
+### **2. Add the Plugin as a Dependency**
+To ensure your plugin loads after CaseOpening, you need to declare it as a dependency in your plugin.yml:
+
+```yaml
+depend: [CaseOpening]
+```
+
+This allows you to safely access the CaseAPI during the onEnable() phase.
+
+### **3. Opening a Case**
 You can open a case for a player with or without removing it from them:
 
 ```java
@@ -59,7 +68,7 @@ if (success) {
 }
 ```
 
-### **3. Managing Cases**
+### **4. Managing Cases**
 You can add or remove cases from a player:
 
 ```java
@@ -67,7 +76,7 @@ caseAPI.addCases(player, "example_case", 5);
 caseAPI.removeCases(player, "example_case", 2);
 ```
 
-### **4. Listening to Case Events**
+### **5. Listening to Case Events**
 You can listen to CaseOpening events to trigger custom actions:
 
 ```java
