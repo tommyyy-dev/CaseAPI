@@ -88,9 +88,12 @@ public abstract class CaseReward {
      * This allows you to update the position of this reward in the case's reward pool.
      *
      * @param index The new index of the reward.
+     *
+     * @return The {@link CaseReward} instance.
      */
-    public void setIndex(int index) {
+    public CaseReward setIndex(int index) {
         this.index = index;
+        return this;
     }
 
     /**
