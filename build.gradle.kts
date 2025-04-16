@@ -10,7 +10,7 @@ java {
 }
 
 group = "org.tommy.caseapi"
-version = "2.0.1"
+version = "2.1.0"
 
 repositories {
     maven("https://repo.papermc.io/repository/maven-public/")
