@@ -16,7 +16,7 @@ CaseAPI is a specialized API designed exclusively for integrating with the CaseO
 <dependency>
     <groupId>com.github.tommyyy-dev</groupId>
     <artifactId>CaseAPI</artifactId>
-    <version>2.1.0</version>
+    <version>2.2.0</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -28,7 +28,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("com.github.tommyyy-dev:CaseAPI:2.1.0")
+    compileOnly("com.github.tommyyy-dev:CaseAPI:2.2.0")
 }
 ```
 
@@ -114,11 +114,11 @@ On the other hand, the `CaseOpenEvent` is only triggered at the beginning of the
 | `void setCases(OfflinePlayer player, String caseId, int amount)`    | Sets the amount of a specific case a player owns.              |
 | `void addCases(OfflinePlayer player, String caseId, int amount)`    | Adds a specific number of cases to a player.                   |
 | `void removeCases(OfflinePlayer player, String caseId, int amount)` | Removes a specific number of cases from a player.              |
-| `int getJewelry(OfflinePlayer player)`                              | Retrieves the current amount of jewelry a player owns.         |
-| `int getPlayerCases(OfflinePlayer player, String caseId)`           | Retrieves the number of a specific case a player owns.         |
-| `int getTotalCasesOpened()`                                         | Retrieves the total number of cases opened globally.           |
-| `int getTotalCasesOpenedByPlayer(OfflinePlayer player)`             | Retrieves the total number of cases opened by a specific player. |
 | `void deletePlayerData(UUID uuid)`                                  | Deletes the player data for the specified UUID.                |
+| `BukkitFutureResult<Integer> getJewelry(OfflinePlayer player)`      | Retrieves the current amount of jewelry a player owns.         |
+| `BukkitFutureResult<Integer> getPlayerCases(OfflinePlayer player, String caseId)` | Retrieves the number of a specific case a player owns.         |
+| `BukkitFutureResult<Integer> getTotalCasesOpened()`                 | Retrieves the total number of cases opened globally.           |
+| `BukkitFutureResult<Integer> getTotalCasesOpenedByPlayer(OfflinePlayer player)` | Retrieves the total number of cases opened by a specific player. |
 
 ### **Events**
 | Event | Description                                                                                  |

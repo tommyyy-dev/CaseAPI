@@ -2,6 +2,7 @@ package org.tommy.caseapi;
 
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
+import org.tommy.caseapi.utils.threading.BukkitFutureResult;
 
 import java.util.List;
 import java.util.UUID;
@@ -110,31 +111,31 @@ public interface CaseAPI {
      * Retrieves the current amount of jewelry owned by the given player.
      *
      * @param player The player whose jewelry amount is requested.
-     * @return The current amount of jewelry the player owns.
+     * @return The current amount of jewelry the player owns as a {@link BukkitFutureResult}.
      */
-    int getJewelry(OfflinePlayer player);
+    BukkitFutureResult<Integer> getJewelry(OfflinePlayer player);
 
     /**
      * Gets the number of a specific case a player owns.
      *
      * @param player The player whose case count is retrieved.
      * @param caseId The ID of the case.
-     * @return The number of cases the player owns.
+     * @return The number of cases the player owns as a {@link BukkitFutureResult}.
      */
-    int getPlayerCases(OfflinePlayer player, String caseId);
+    BukkitFutureResult<Integer> getPlayerCases(OfflinePlayer player, String caseId);
 
     /**
      * Gets the total number of cases opened globally.
      *
-     * @return The total number of opened cases.
+     * @return The total number of opened cases as a {@link BukkitFutureResult}.
      */
-    int getTotalCasesOpened();
+    BukkitFutureResult<Integer> getTotalCasesOpened();
 
     /**
      * Gets the total number of cases opened by a specific player.
      *
      * @param player The player whose case opening count is retrieved.
-     * @return The total number of cases opened by the player.
+     * @return The total number of cases opened by the player as a {@link BukkitFutureResult}.
      */
-    int getTotalCasesOpenedByPlayer(OfflinePlayer player);
+    BukkitFutureResult<Integer> getTotalCasesOpenedByPlayer(OfflinePlayer player);
 }
