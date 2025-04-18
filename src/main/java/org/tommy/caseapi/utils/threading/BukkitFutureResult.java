@@ -30,6 +30,11 @@ public class BukkitFutureResult<T> {
         });
     }
 
+    public void whenComplete(@NotNull Plugin plugin, @NotNull Consumer<? super T> callback) {
+        var executor = (Executor) r -> Bukkit.getScheduler().runTask(plugin, r);
+        this.future.thenAcceptAsync(callback, executor);
+    }
+
     public @Nullable T join() {
         return this.future.join();
     }
