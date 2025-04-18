@@ -16,7 +16,7 @@ CaseAPI is a specialized API designed exclusively for integrating with the CaseO
 <dependency>
     <groupId>com.github.tommyyy-dev</groupId>
     <artifactId>CaseAPI</artifactId>
-    <version>2.2.0</version>
+    <version>2.2.1</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -28,7 +28,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("com.github.tommyyy-dev:CaseAPI:2.2.0")
+    compileOnly("com.github.tommyyy-dev:CaseAPI:2.2.1")
 }
 ```
 
@@ -104,7 +104,6 @@ On the other hand, the `CaseOpenEvent` is only triggered at the beginning of the
 ### **Main Methods**
 | Method                                                              | Description                                                    |
 |---------------------------------------------------------------------|----------------------------------------------------------------|
-| `List<String> getCases()`                                           | Gets a list of all available case IDs.                         |
 | `boolean caseExists(String caseId)`                                 | Checks if a case with the given ID exists.                     |
 | `boolean openCaseWithoutRemove(Player player, String caseId)`       | Opens a case for a player without removing it from them.       |
 | `boolean openCaseWithRemove(Player player, String caseId)`          | Opens a case for a player and removes it from them.            |
@@ -114,7 +113,6 @@ On the other hand, the `CaseOpenEvent` is only triggered at the beginning of the
 | `void setCases(OfflinePlayer player, String caseId, int amount)`    | Sets the amount of a specific case a player owns.              |
 | `void addCases(OfflinePlayer player, String caseId, int amount)`    | Adds a specific number of cases to a player.                   |
 | `void removeCases(OfflinePlayer player, String caseId, int amount)` | Removes a specific number of cases from a player.              |
-| `void deletePlayerData(UUID uuid)`                                  | Deletes the player data for the specified UUID.                |
 | `BukkitFutureResult<Integer> getJewelry(OfflinePlayer player)`      | Retrieves the current amount of jewelry a player owns.         |
 | `BukkitFutureResult<Integer> getPlayerCases(OfflinePlayer player, String caseId)` | Retrieves the number of a specific case a player owns.         |
 | `BukkitFutureResult<Integer> getTotalCasesOpened()`                 | Retrieves the total number of cases opened globally.           |

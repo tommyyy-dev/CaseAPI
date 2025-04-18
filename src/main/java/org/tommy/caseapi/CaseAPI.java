@@ -4,9 +4,6 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.tommy.caseapi.utils.threading.BukkitFutureResult;
 
-import java.util.List;
-import java.util.UUID;
-
 /**
  * The CaseAPI interface provides methods to interact with the case system.
  * It allows opening cases, managing players' jewelry and cases, and retrieving statistics.
@@ -14,13 +11,6 @@ import java.util.UUID;
  * @author Tommyyy
  */
 public interface CaseAPI {
-
-    /**
-     * Gets a list of all available case IDs.
-     *
-     * @return A list of case IDs.
-     */
-    List<String> getCases();
 
     /**
      * Checks if a case with the given ID exists.
@@ -98,14 +88,6 @@ public interface CaseAPI {
      * @param amount The number of cases to remove.
      */
     void removeCases(OfflinePlayer player, String caseId, int amount);
-
-    /**
-     * Deletes all the player data.
-     * This includes removing the player's statistics, jewelry, and case ownership.
-     *
-     * @param uuid The UUID of the player whose data is to be deleted.
-     */
-    void deletePlayerData(UUID uuid);
 
     /**
      * Retrieves the current amount of jewelry owned by the given player.
