@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents an event triggered when a case opening attempt fails.
- * It provides information about the player, the case ID, and the reason for failure.
+ * It provides information about the player and the case ID.
  * This event cannot be cancelled.
  *
  * @author Tommyyy
@@ -17,19 +17,16 @@ public class FailedCaseOpenEvent extends Event {
     private static final HandlerList HANDLERS = new HandlerList();
     private final Player player;
     private final String caseId;
-    private final String failureReason;
 
     /**
      * Constructs a new {@code FailedCaseOpenEvent} with the specified parameters.
      *
      * @param player The player who attempted to open the case.
      * @param caseId The unique identifier of the case that was attempted to be opened.
-     * @param failureReason The reason why the case opening failed.
      */
-    public FailedCaseOpenEvent(Player player, String caseId, String failureReason) {
+    public FailedCaseOpenEvent(Player player, String caseId) {
         this.player = player;
         this.caseId = caseId;
-        this.failureReason = failureReason;
     }
 
     /**
@@ -48,15 +45,6 @@ public class FailedCaseOpenEvent extends Event {
      */
     public String getCaseId() {
         return this.caseId;
-    }
-
-    /**
-     * Gets the reason why the case opening failed.
-     *
-     * @return The failure reason.
-     */
-    public String getFailureReason() {
-        return this.failureReason;
     }
 
     @Override
