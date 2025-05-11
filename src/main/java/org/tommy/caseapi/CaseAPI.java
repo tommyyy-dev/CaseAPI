@@ -16,27 +16,27 @@ public interface CaseAPI {
      * Checks if a case with the given ID exists.
      *
      * @param caseId The ID of the case to check.
-     * @return {@code true} if the case exists, {@code false} otherwise.
+     * @return A {@link BukkitFutureResult} that completes with {@code true} if the case exists, {@code false} otherwise.
      */
-    boolean caseExists(String caseId);
+    BukkitFutureResult<Boolean> caseExists(String caseId);
 
     /**
-     * Opens a case for a player without removing it from them.
+     * Opens a case for a player without removing it.
      *
      * @param player The player opening the case.
      * @param caseId The ID of the case to open.
-     * @return {@code true} if the case was successfully opened, {@code false} otherwise.
+     * @return A {@link BukkitFutureResult} that completes with {@code true} if the case was successfully opened, {@code false} otherwise.
      */
-    boolean openCaseWithoutRemove(Player player, String caseId);
+    BukkitFutureResult<Boolean> openCaseWithoutRemove(Player player, String caseId);
 
     /**
-     * Opens a case for a player and removes it from them.
+     * Opens a case for a player and removes one from their inventory.
      *
      * @param player The player opening the case.
      * @param caseId The ID of the case to open.
-     * @return {@code true} if the case was successfully opened, {@code false} otherwise.
+     * @return A {@link BukkitFutureResult} that completes with {@code true} if the case was successfully opened, {@code false} otherwise.
      */
-    boolean openCaseWithRemove(Player player, String caseId);
+    BukkitFutureResult<Boolean> openCaseWithRemove(Player player, String caseId);
 
     /**
      * Sets the amount of jewelry a player has.
