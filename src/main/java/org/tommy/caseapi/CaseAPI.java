@@ -30,7 +30,7 @@ public interface CaseAPI {
     BukkitFutureResult<Boolean> openCaseWithoutRemove(Player player, String caseId);
 
     /**
-     * Opens a case for a player and removes one from their inventory.
+     * Opens a case for a player and removes one from them.
      *
      * @param player The player opening the case.
      * @param caseId The ID of the case to open.
