@@ -30,6 +30,7 @@ public class DurationUtil {
             case WEEKS -> Duration.ofDays(amount * 7);
             case MONTHS -> Duration.ofDays(amount * 30);
             case YEARS -> Duration.ofDays(amount * 365);
+            default -> Duration.ZERO;
         };
     }
 }

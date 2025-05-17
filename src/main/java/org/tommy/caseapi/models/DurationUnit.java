@@ -8,7 +8,8 @@ public enum DurationUnit {
     DAYS,
     WEEKS,
     MONTHS,
-    YEARS;
+    YEARS,
+    INFINITE;
 
     public static DurationUnit fromString(String s) {
         try {
