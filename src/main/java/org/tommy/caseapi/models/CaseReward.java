@@ -11,7 +11,7 @@ public abstract class CaseReward {
     private int index;
 
     private final boolean isLimited;
-    private int maxDraws;
+    private final int maxDraws;
     private int remainingDraws;
 
     protected CaseReward(String type, double chance, ItemStack itemStack, boolean withBroadcastMessage, boolean isLimited, int maxDraws, int remainingDraws) {
